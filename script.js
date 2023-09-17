@@ -1,0 +1,57 @@
+
+const mapContainer = document.getElementById('map-container');
+
+let countryP =document.querySelector('#country');
+let idP =document.querySelector('#id');
+let latP =document.querySelector('#lat');
+let lonP =document.querySelector('#lon');
+let nameP =document.querySelector('#name');
+let regionP =document.querySelector('#region');
+let urlP =document.querySelector('#url');
+
+let img = document.getElementById('weatherIcon');
+
+const searchButton = document.getElementById('search-button');
+searchButton.addEventListener('click', handleSearch);
+
+
+
+async function fetchWeatherData(location) {
+  let divv=document.getElementById('weather-details');
+    const apiKey = '4a758dd1aed04dc3950175920231609';
+    const apiUrl = `http://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${location}`;
+    const apiUrl2 = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location} &aqi=no`;
+    fetch(apiUrl2)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log('====================================');
+        console.log(data);
+        console.log('====================================');
+
+        countryP.innerHTML=data['location']['country'];
+        idP.innerHTML=data['current']['temp_c'];
+        latP.innerHTML=data['location']['lat'];
+        lonP.innerHTML=data['location']['lon'];
+        nameP.innerHTML=data['location']['name'];
+        regionP.innerHTML=data['location']['region'];
+        urlP.innerHTML=data['current']['condition']['text'];
+        img.src=data['current']['condition']['icon'];
+      })
+      .catch((error) => {
+        console.error('Fetch error:', error);
+      });
+
+    
+}
+function handleSearch() {
+    const locationInput = document.getElementById('location-input');
+    const location = locationInput.value;
+    
+    fetchWeatherData(location);
+}
+

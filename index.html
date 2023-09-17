@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <header>
+        <h1>Weather Forecast</h1>
+        <div class="user-interface">
+            <input type="text" id="location-input" placeholder="Enter location">
+            <button id="search-button">Search</button>
+        </div>
+    </header>
+
+    <section id="current-weather">
+        <h2>Current Weather</h2>
+        <div class="weather-info">
+            <div class="weather-icon">
+                <img id="weatherIcon" src="weather-icon.png" alt="Weather Icon">
+            </div>
+            <div id="weather-details" class="status">
+                <p>country: <span id="country">Loading...</span></p>
+                <p>temp_c: <span id="id">Loading...</span></p>
+                <p>lat: <span id="lat">Loading...</span></p>
+                <p>lon: <span id="lon">Loading...</span></p>
+                <p>name: <span id="name">Loading...</span></p>
+                <p>region: <span id="region">Loading...</span></p>
+                <p>url: <span id="url">Loading...</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="weather-forecast">
+        <h2>Weather Forecast</h2>
+        <div class="forecast">
+            <div class="forecast-card">
+                <p><strong>Monday</strong></p>
+                <!-- <p><img src="forecast-icon.png" alt="Weather Icon"></p> -->
+                <p>High: <span id="high-temp-monday">28°C</span></p>
+                <p>Low: <span id="low-temp-monday">20°C</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="weather-map">
+        <h2>Weather Map</h2>
+        <div id="map-container">
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
