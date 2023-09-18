@@ -15,11 +15,11 @@ const searchButton = document.getElementById('search-button');
 searchButton.addEventListener('click', handleSearch);
 
 
-
+let apiKey;
 async function fetchWeatherData(location) {
   let divv=document.getElementById('weather-details');
-    const apiKey = '4a758dd1aed04dc3950175920231609';
-    const apiUrl = `http://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${location}`;
+    apiKey = '4a758dd1aed04dc3950175920231609';
+   // const apiUrl = `http://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${location}`;
     const apiUrl2 = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location} &aqi=no`;
     fetch(apiUrl2)
       .then((response) => {
@@ -54,4 +54,55 @@ function handleSearch() {
     
     fetchWeatherData(location);
 }
+
+let latitude;
+let longitude;
+navigator.geolocation.getCurrentPosition(
+  function (position) {
+      latitude = position.coords.latitude;
+      longitude = position.coords.longitude;
+      // Use the latitude and longitude for reverse geocoding
+      console.log(latitude);
+      console.log(longitude);
+      fetchCurrentLocationName(latitude, longitude);
+  },
+  function (error) {
+      // Handle geolocation error
+      console.error(`Geolocation error: ${error.message}`);
+  }
+);
+
+async function fetchCurrentLocationName(latitude, longitude) {
+  const apiKey = '4a758dd1aed04dc3950175920231609';
+  const apiUrl = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}&aqi=no`;
+  
+  try {
+      const response = await fetch(apiUrl);
+      if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      console.log('====================================');
+      console.log(data);
+      console.log('====================================');
+      const locationName = data.location.name;
+      fetchWeatherData(locationName);
+      console.log(`Current Location Name: ${locationName}`);
+  } catch (error) {
+      console.error('Fetch error:', error);
+  }
+}
+
+
+    // Initialize the map
+    function initMap() {
+      
+      var location ={lat:latitude,lng:longitude};
+      var map = new google.maps.Map(document.getElementById('map'),{
+        zoom: 4,
+        center : location
+      });
+  }
+  
 

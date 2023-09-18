@@ -8,7 +8,7 @@
 </head>
 <body>
       <header>
-        <h1>Weather Forecast</h1>
+        <h1 class="title">Weather Forecast</h1>
         <div class="user-interface">
             <input type="text" id="location-input" placeholder="Enter location">
             <button id="search-button">Search</button>
@@ -31,6 +31,7 @@
                 <p>url: <span id="url">Loading...</span></p>
             </div>
         </div>
+        <h3>Hello</h3>
     </section>
 
     <section id="weather-forecast">
@@ -48,9 +49,11 @@
     <section id="weather-map">
         <h2>Weather Map</h2>
         <div id="map-container">
+            <div id="map"></div>
         </div>
     </section>
-
+    
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9yvPu3q1VbjYzU3G3xXut1K4ur9B4qGg&callback=initMap"></script>
     <script src="script.js"></script>
 </body>
 </html>
