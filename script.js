@@ -65,6 +65,8 @@ navigator.geolocation.getCurrentPosition(
       console.log(latitude);
       console.log(longitude);
       fetchCurrentLocationName(latitude, longitude);
+      const iframe = document.getElementById("map-iframe");
+      iframe.src = `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4017007.4579222617!2d${longitude}!3d${latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2slk!4v1695104118915!5m2!1sen!2slk`;
   },
   function (error) {
       // Handle geolocation error
@@ -105,4 +107,6 @@ async function fetchCurrentLocationName(latitude, longitude) {
       });
   }
   
+
+// ------------------------------------------------------------------------------
 

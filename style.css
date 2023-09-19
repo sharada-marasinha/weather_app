@@ -33,11 +33,30 @@ header {
     text-align: center;
 }
 
+.timeLbl{
+  /* 5:42 PM */
+
+position: absolute;
+left: 80%;
+top: 45%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 48px;
+line-height: 58px;
+
+color: #000000;
+
+
+}
+
 #location-input {
     padding: 10px;
     width: 60%;
     border: none;
     border-radius: 10px;
+    color: black;
     
 }
 
@@ -67,18 +86,28 @@ header {
 .weather-info {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 60px;
 }
 
 .weather-icon img {
-    padding: 30px;
-    width: 100px;
+width: 100px;
 
     
 }
 
-.weather-details {
-    flex-grow: 1;
-    text-align: center;
+#weather-details {
+ position: relative;
+   left: 5%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+
+}
+
+#weather-details p{
+  padding: 10px;
 }
 
 #weather-forecast {
@@ -100,18 +129,9 @@ header {
     flex-wrap: wrap;
 }
 
-.forecast-card {
-    width: calc(33.33% - 10px); 
-    padding: 10px;
-    background-color: #f5f5f5;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
 
-.forecast-card img {
-    max-width: 50px;
-    height: auto;
-}
+
+
 
 #weather-map {
     background-color: #fff;
@@ -126,9 +146,6 @@ header {
     margin-bottom: 10px;
 }
 
-#map-container {
-   
-}
 
 @media screen and (max-width: 768px) {
     /* Mobile styles go here */
@@ -152,4 +169,11 @@ header {
 #map {
     height: 400px;
     width: 100%;
+}
+
+#weather-container{
+    background-color: black;
+    margin: 50px;
+    top : 50%;
+    padding-top: 500px;
 }
