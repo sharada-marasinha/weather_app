@@ -16,7 +16,7 @@ header {
     color: #fff;
     padding: 100px;
     text-align: center;
-    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url('img/earth-1756274_1920.jpg');
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url('img/earth.jpg');
     background-position: center;
     background-size: cover;
 }
