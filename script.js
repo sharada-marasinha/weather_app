@@ -110,3 +110,18 @@ async function fetchCurrentLocationName(latitude, longitude) {
 
 // ------------------------------------------------------------------------------
 
+function updateLocalTime() {
+  const localTimeElement = document.getElementById('local-time');
+  const now = new Date(); // Create a Date object with the current date and time
+  const localTimeString = now.toLocaleTimeString(); // Get the local time as a string
+
+  localTimeElement.textContent = `Time: ${localTimeString}`; // Update the element's content
+}
+
+// Call the updateLocalTime function to initially display the local time
+updateLocalTime();
+
+// Use setInterval to update the local time every second
+setInterval(updateLocalTime, 1000); // Update every 1000 milliseconds (1 second)
+
+setInterval(fetchCurrentLocationName(latitude, longitude), 1000);
