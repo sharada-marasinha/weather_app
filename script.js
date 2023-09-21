@@ -1,14 +1,16 @@
 
 const mapContainer = document.getElementById('map-container');
 
-let countryP =document.querySelector('#country');
-let idP =document.querySelector('#id');
+let countryP =document.querySelector('.country');
+let idP =document.querySelector('.temp_c');
 let latP =document.querySelector('#lat');
 let lonP =document.querySelector('#lon');
-let nameP =document.querySelector('#name');
-let regionP =document.querySelector('#region');
-let urlP =document.querySelector('#url');
-
+let nameP =document.querySelector('.name');
+let regionP =document.querySelector('.region');
+let urlP =document.querySelector('.url');
+let humidity = document.querySelector('.humidity');
+let tz_id = document.querySelector('.tz_id');
+let wind_kph = document.querySelector('.wind_kph');
 let img = document.getElementById('weatherIcon');
 
 const searchButton = document.getElementById('search-button');
@@ -34,13 +36,17 @@ async function fetchWeatherData(location) {
         console.log('====================================');
 
         countryP.innerHTML=data['location']['country'];
-        idP.innerHTML=data['current']['temp_c'];
+        idP.innerHTML=data['current']['temp_c']+"°C";
         latP.innerHTML=data['location']['lat'];
         lonP.innerHTML=data['location']['lon'];
         nameP.innerHTML=data['location']['name'];
         regionP.innerHTML=data['location']['region'];
         urlP.innerHTML=data['current']['condition']['text'];
+        humidity.innerHTML=data['current']['humidity'];
+        tz_id.innerHTML=data['location']['tz_id'];
+        wind_kph.innerHTML=data['current']['wind_kph']+"kph";
         img.src=data['current']['condition']['icon'];
+
       })
       .catch((error) => {
         console.error('Fetch error:', error);

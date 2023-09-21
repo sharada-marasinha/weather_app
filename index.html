@@ -17,7 +17,7 @@
   <body>
     <!--------------------------------header-------------------------------->
     <header>
-      <h1 class="title"><b>Weather</b> Forecast</h1>
+      <h1 class="title">🌍<b>Weather</b> Forecast</h1>
 
       <div class="user-interface">
         <input type="text" id="location-input" placeholder="Enter location" />
@@ -37,9 +37,9 @@
                 <img class="weatherIcon1" id="weatherIcon" alt="Weather Icon" />
               </div>
               <div class="weather-info">
-                <h3 class="location">City Name</h3>
-                <p class="temperature">25°C</p>
-                <p class="description">Cloudy</p>
+                <h3 class="location name">City Name</h3>
+                <p class="temperature temp_c">25°C</p>
+                <p class="description url">Cloudy</p>
               </div>
               <div class="timeLbl" id="local-time"></div>
             </div>
@@ -47,11 +47,26 @@
 
           <td>
             <div class="weather-details">
-              <p><strong>📍Location:</strong> Colombo, Sri Lanka</p>
-              <p><strong>🌡Temperature:</strong> 25°C</p>
-              <p><strong>❄️Humidity:</strong> 60%</p>
-              <p><strong>🍃Wind Speed:</strong> 10 km/h</p>
-              <p><strong>💧Condition:</strong> Clear</p>
+              <table>
+                <tr>
+                  <td><strong>📍Location : </strong></td>
+                  <td><span class="tz_id" ></span></td>
+                </tr>
+                <tr>
+                  <td><strong>🌡Temperature : </strong></td>
+                </tr>
+                <tr>
+                  <td><strong>❄️Humidity :</strong></td>
+                  <td><span class="humidity"></span></td>
+                </tr>
+                <tr>
+                  <td><strong>🍃Wind Speed : </strong></td>
+                  <td><span class="wind_kph"></span></td>
+                </tr>
+                <tr>
+                  <td><strong>💧Condition : </strong></td>
+                </tr>
+              </table>
             </div>
           </td>
         </tr>
@@ -59,13 +74,13 @@
         <tr>
           <td>
             <div id="weather-details" class="status">
-              <p>country: <span id="country"></span></p>
-              <p>temp_c: <span id="id"></span></p>
+              <p>country: <span class="country"></span></p>
+              <p>temp_c: <span class="temp_c"></span></p>
               <p>lat: <span id="lat"></span></p>
               <p>lon: <span id="lon"></span></p>
-              <p>name: <span id="name"></span></p>
-              <p>region: <span id="region"></span></p>
-              <p>url: <span id="url"></span></p>
+              <p>name: <span class="name"></span></p>
+              <p>region: <span class="region"></span></p>
+              <p>url: <span class="url"></span></p>
             </div>
           </td>
         </tr>
