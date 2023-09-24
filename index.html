@@ -22,10 +22,13 @@
       <div class="user-interface">
         <input type="text" id="location-input" placeholder="Enter location" />
         <button id="search-button">Search</button>
+        <button onclick="darkMode()">DarkMood</button>
+        
       </div>
+      
     </header>
     <!--------------------------------header END-------------------------------->
-
+    
     <!-----------------------------------Current Weather------------------------->
     <section id="current-weather">
       <h1>Current Weather 🌱</h1>
@@ -150,16 +153,19 @@
             <table>
               <tr>
                 <td>Date</td>
-                <td></td>
+                <td id="date"></td>
               </tr>
               <tr>
                 <td>moon_phase</td>
+                <td id="moon_phase"></td>
               </tr>
               <tr>
                 <td>avghumidity</td>
+                <td id="avghumidity"></td>
               </tr>
               <tr>
                 <td>avgtemp_c</td>
+                <td id="avgtemp_c"></td>
               </tr>
             </table>
           </div>

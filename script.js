@@ -1,3 +1,8 @@
+function darkMode() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
+
 
 const mapContainer = $("#map-container");
 
@@ -126,6 +131,9 @@ function getWeatherTimeLine(location) {
   let card02Title = document.querySelector(".card02-title");
   let card03Title = document.querySelector(".card03-title");
   let card04Title = document.querySelector(".card04-title");
+
+
+  let date01 = document.querySelector("#date");
   $.ajax({
     method : "GET",
     url: `http://api.weatherapi.com/v1/history.json?key=4a758dd1aed04dc3950175920231609&q=Panadura&dt=2023-09-16&end_dt=2023-09-20`,
@@ -140,7 +148,7 @@ function getWeatherTimeLine(location) {
      card03Title.innerHTML= resp['forecast']['forecastday'][2]['day']['condition']['text'];
      card04Title.innerHTML= resp['forecast']['forecastday'][3]['day']['condition']['text'];
      
-     
+    date01.innerHTML= resp['forecast']['forecastday'][0]['date'];
      
        console.log(resp);
     }

@@ -97,7 +97,13 @@ header {
   border-radius: 5px;
   text-align: center;
 }
-
+.dark-mode {
+  background-color: #A4B0BE;
+  color: white;
+  #weather-details{
+    color: #222F3E;
+  }
+}
 #weather-details{
     display: inline-flex;
     justify-content: space-between;
