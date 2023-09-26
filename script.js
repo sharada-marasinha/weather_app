@@ -98,9 +98,9 @@ setInterval(updateLocalTime, 1000);
 
 // ------------------------------------getWeatherTimeLine---------------------------------
 function getWeatherTimeLine(location) {
-  let img1=document.getElementById("day01Img");
+ // let img1=document.getElementById("day01Img");
   let img2=document.getElementById("day02Img");
-  let img3=document.getElementById("day03Img");
+  //let img3=document.getElementById("day03Img");
   let img4=document.getElementById("day04Img");
 
   let card01Title = document.querySelector(".card01-title");
@@ -117,14 +117,14 @@ function getWeatherTimeLine(location) {
     method : "GET",
     url: `http://api.weatherapi.com/v1/history.json?key=4a758dd1aed04dc3950175920231609&q=Panadura&dt=2023-09-16&end_dt=2023-09-20`,
     success : (resp) => {
-     img1.src= resp['forecast']['forecastday'][0]['day']['condition']['icon'];
+    // img1.src= resp['forecast']['forecastday'][0]['day']['condition']['icon'];
      img2.src= resp['forecast']['forecastday'][1]['day']['condition']['icon'];
-     img3.src= resp['forecast']['forecastday'][2]['day']['condition']['icon'];
+    // img3.src= resp['forecast']['forecastday'][2]['day']['condition']['icon'];
      img4.src= resp['forecast']['forecastday'][4]['day']['condition']['icon'];
 
-     card01Title.innerHTML= resp['forecast']['forecastday'][0]['day']['condition']['text'];
+    // card01Title.innerHTML= resp['forecast']['forecastday'][0]['day']['condition']['text'];
      card02Title.innerHTML= resp['forecast']['forecastday'][1]['day']['condition']['text'];
-     card03Title.innerHTML= resp['forecast']['forecastday'][2]['day']['condition']['text'];
+    // card03Title.innerHTML= resp['forecast']['forecastday'][2]['day']['condition']['text'];
      card04Title.innerHTML= resp['forecast']['forecastday'][3]['day']['condition']['text'];
      
      moon_phase01.innerHTML= resp['forecast']['forecastday'][0]['astro']['moonrise'];
