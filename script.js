@@ -98,39 +98,62 @@ setInterval(updateLocalTime, 1000);
 
 // ------------------------------------getWeatherTimeLine---------------------------------
 function getWeatherTimeLine(location) {
- // let img1=document.getElementById("day01Img");
-  let img2=document.getElementById("day02Img");
-  //let img3=document.getElementById("day03Img");
-  let img4=document.getElementById("day04Img");
+  let img1=document.getElementById("img1");
+  let img2=document.getElementById("img2");
+  let img3=document.getElementById("img3");
+  let img4=document.getElementById("img4");
+  let img5=document.getElementById("img5");
+  let img6=document.getElementById("img6");
+  let img7=document.getElementById("img7");
 
-  let card01Title = document.querySelector(".card01-title");
-  let card02Title = document.querySelector(".card02-title");
-  let card03Title = document.querySelector(".card03-title");
-  let card04Title = document.querySelector(".card04-title");
+  let title1 = document.querySelector(".title1");
+  let title2 = document.querySelector(".title2");
+  let title3 = document.querySelector(".title3");
+  let title4 = document.querySelector(".title4");
+  let title5 = document.querySelector(".title5");
+  let title6 = document.querySelector(".title6");
+  let title7 = document.querySelector(".title7");
 
 
-  let date01 = document.querySelector("#date");
+  let date01 = document.querySelector("#date1");
+  let date02 = document.querySelector("#date2");
+  let date03 = document.querySelector("#date3");
+  let date04 = document.querySelector("#date4");
+  let date05 = document.querySelector("#date5");
+  let date06 = document.querySelector("#date6");
+  let date07 = document.querySelector("#date7");
   
-  let moon_phase01 = document.querySelector("#moon_phase");
+ // let moon_phase01 = document.querySelector("#moon_phase");
 
   $.ajax({
     method : "GET",
-    url: `http://api.weatherapi.com/v1/history.json?key=4a758dd1aed04dc3950175920231609&q=Panadura&dt=2023-09-16&end_dt=2023-09-20`,
+    url: `http://api.weatherapi.com/v1/history.json?key=4a758dd1aed04dc3950175920231609&q=Panadura&dt=2023-09-16&end_dt=2023-09-22`,
     success : (resp) => {
-    // img1.src= resp['forecast']['forecastday'][0]['day']['condition']['icon'];
+     img1.src= resp['forecast']['forecastday'][0]['day']['condition']['icon'];
      img2.src= resp['forecast']['forecastday'][1]['day']['condition']['icon'];
-    // img3.src= resp['forecast']['forecastday'][2]['day']['condition']['icon'];
-     img4.src= resp['forecast']['forecastday'][4]['day']['condition']['icon'];
+    img3.src= resp['forecast']['forecastday'][2]['day']['condition']['icon'];
+    img4.src= resp['forecast']['forecastday'][3]['day']['condition']['icon'];
+    img5.src= resp['forecast']['forecastday'][4]['day']['condition']['icon'];
+    img6.src= resp['forecast']['forecastday'][5]['day']['condition']['icon'];
+    img7.src= resp['forecast']['forecastday'][6]['day']['condition']['icon'];
 
-    // card01Title.innerHTML= resp['forecast']['forecastday'][0]['day']['condition']['text'];
-     card02Title.innerHTML= resp['forecast']['forecastday'][1]['day']['condition']['text'];
-    // card03Title.innerHTML= resp['forecast']['forecastday'][2]['day']['condition']['text'];
-     card04Title.innerHTML= resp['forecast']['forecastday'][3]['day']['condition']['text'];
+    title1.innerHTML= resp['forecast']['forecastday'][0]['day']['condition']['text'];
+   title2.innerHTML= resp['forecast']['forecastday'][1]['day']['condition']['text'];
+    title3.innerHTML= resp['forecast']['forecastday'][2]['day']['condition']['text'];
+   title4.innerHTML= resp['forecast']['forecastday'][3]['day']['condition']['text'];
+   title5.innerHTML= resp['forecast']['forecastday'][3]['day']['condition']['text'];
+   title6.innerHTML= resp['forecast']['forecastday'][3]['day']['condition']['text'];
+   title7.innerHTML= resp['forecast']['forecastday'][3]['day']['condition']['text'];
      
-     moon_phase01.innerHTML= resp['forecast']['forecastday'][0]['astro']['moonrise'];
+  //   moon_phase01.innerHTML= resp['forecast']['forecastday'][0]['astro']['moonrise'];
 
-     date01.innerHTML= resp['forecast']['forecastday'][0]['date'];
-     
+    date01.innerHTML= resp['forecast']['forecastday'][0]['date'];
+    date02.innerHTML= resp['forecast']['forecastday'][1]['date'];
+    date03.innerHTML= resp['forecast']['forecastday'][2]['date'];
+    date04.innerHTML= resp['forecast']['forecastday'][3]['date'];
+    date05.innerHTML= resp['forecast']['forecastday'][4]['date'];
+    date06.innerHTML= resp['forecast']['forecastday'][5]['date'];
+    date07.innerHTML= resp['forecast']['forecastday'][6]['date'];
        console.log(resp);
     }
  });
