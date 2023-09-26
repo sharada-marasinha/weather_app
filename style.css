@@ -66,7 +66,7 @@ nav img{
 
 
 .title{
-    font-size: 55px;
+    font-size: 50px;
     margin-top: 1%;
     text-align: center;
   
@@ -107,13 +107,106 @@ nav img{
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-
+.tblW{
+  margin-left: 20%;
+  margin-top: 4%;
+  
+}
  .weather-details {
-    position: relative;
-    font-size: 19px;
-    left: 30%;
-    text-align: left;
+
+  color: white; 
+  background-color: #222F3E;
+  border-radius: 10px;
+  margin-left: 200px;
+  box-shadow: #333;
+  width: 370px;
+  height: 280px;
+    
 } 
+.lon{
+margin-left: 21%;
+margin-top: -1%;
+}
+.lat{
+  margin-left: 21%;
+  margin-bottom: 4px;
+}
+#lon{
+  margin-left: 2%;
+}
+#lat{
+  margin-left:2% ;
+}
+/* ******location************** */
+.locationPara{
+  font-family:'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: 18;
+}
+.tz_id{
+  font-size: 14px;
+ 
+}
+/* ******tempurature************** */
+.tempPara{
+  font-family:'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: 18;
+}
+.temp_c{
+  font-size: 14px;
+  padding-left: 8px;
+}
+/* ******humidity************** */
+.humidityPara{
+  font-family:'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: 18;
+}
+.temp_c{
+  font-size: 14px;
+  padding-left: 8px;
+}
+/* ******wind-speed************** */
+.windPara{
+  font-family:'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: 18;
+}
+.temp_c{
+  font-size: 14px;
+  padding-left: 8px;
+}
+/* ******condition************** */
+.conditionPara{
+  font-family:'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: 18;
+}
+.temp_c{
+  font-size: 14px;
+  padding-left: 8px;
+}
+/* ******region************** */
+.regionPara{
+  font-family:'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: 18;
+}
+.temp_c{
+  font-size: 14px;
+  padding-left: 8px;
+}
+/* ******country************** */
+.countryPara{
+  font-family:'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: 18;
+}
+.temp_c{
+  font-size: 14px;
+  padding-left: 8px;
+}
 .date-serch{
   margin: 7px;
   align-items: center;
