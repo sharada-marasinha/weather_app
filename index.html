@@ -47,9 +47,6 @@
     <!-----------------------------------Current Weather------------------------->
     <section id="current-weather">
       <h1>Current Weather 🌱</h1>
-      <table>
-        <tr>
-          <td>
             <div class="weather-card">
               <div class="weather-icon">
                 <img class="weatherIcon1" id="weatherIcon" alt="Weather Icon" />
@@ -61,58 +58,46 @@
               </div>
               <div class="timeLbl" id="local-time"></div>
             </div>
-          </td>
-
-          <td>
+       
             <div class="weather-details">
               <table class="tblW">
                 <tr>
-                  <td colspan="4">
-                    <br>
-                  </td>
+                  <td><strong class="locationPara">📍Location</strong></td>
+                  
+                  <td><strong class="tempPara">🌡Temperature</strong></td>
+                  
+                  <td><strong class="humidityPara">❄️Humidity</strong></td>
+                  
+                  <td><strong class="windPara">🍃Wind Speed</strong></td>
+                  
+                  <td><strong class="conditionPara">💧Condition</strong></td>
+                  
+                  <td><strong class="regionPara">🎗 Region</strong></td>
+                  
+                  <td><strong class="countryPara">🗺 Country</strong></td>
+                  
+                  <td><strong>lon</strong></td>
+                  
+                  <td><strong>lat</strong></td>
+                  
                 </tr>
                 <tr>
-                  <td><strong class="locationPara">📍Location : </strong></td>
                   <td><span class="tz_id" ></span></td>
-                </tr>
-                <tr>
-                  <td><strong class="tempPara">🌡Temperature : </strong></td>
                   <td><span class="temp_c"></span></td>
-                </tr>
-                <tr>
-                  <td><strong class="humidityPara">❄️Humidity :</strong></td>
                   <td><span class="humidity"></span></td>
-                </tr>
-                <tr>
-                  <td><strong class="windPara">🍃Wind Speed : </strong></td>
                   <td><span class="wind_kph"></span></td>
-                </tr>
-                <tr>
-                  <td><strong class="conditionPara">💧Condition : </strong></td>
                   <td class="url"></td>
-                </tr>
-                <tr>
-                  <td><strong class="regionPara">🎗 region : </strong></td>
                   <td><span class="region"></span></td>
-                </tr>
-                <tr>
-                  <td>
-                    <strong class="countryPara">🗺 Country</strong>
-                  </td>
                   <td><span class="country"></span></td>
+                  <td><span id="lon"></span></td>
+                  <td><span id="lat"></span></td>
                 </tr>
+             
               </table>
-             <br>
-                <p class="lon">lon:<span id="lon"></span></p>
-                <p class="lat">lat:<span id="lat"></span></p>
-            
-        
-               
-
-              
+    
+                <p class="lon"></p>
+                <p class="lat"></p>
             </div>
-          </td>
-      </table>
     </section>
     <!-----------------------------------Current Weather END------------------------->
 
@@ -120,16 +105,85 @@
       <h1>Weather Forecast</h1>
 
       <div class="date-serch">
-        To   : <input type="date">&nbsp;&nbsp;&nbsp;
-        End   : <input type="date">
+        To   : <input id="startDate" type="date">&nbsp;&nbsp;&nbsp;
+        End   : <input id="endDate" type="date">
+        <button onclick="searchForecast()">Search Date</button>
       </div>
       <hr>
+      <div>
+        <table class="tblForcast">
+          <tr>
+            <td>
+              <strong id="date1"></strong>
+            </td>
+            <td>
+              <strong id="date2"></strong>
+            </td>
+            <td>
+              <strong id="date3"></strong>
+            </td>
+            <td>
+              <strong id="date4"></strong>
+            </td>
+            <td>
+              <strong id="date5"></strong>
+            </td>
+            <td>
+              <strong id="date6"></strong>
+            </td>
+            <td>
+              <strong id="date7"></strong>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img id="img1" src="" alt="">
+            </td>
+            <td>
+              <img id="img2" src="" alt="">
+            </td>
+            <td>
+              <img id="img3" src="" alt="">
+            </td>
+            <td>
+              <img id="img4" src="" alt="">
+            </td>
+            <td>
+              <img id="img5" src="" alt="">
+            </td>
+            <td>
+              <img id="img6" src="" alt="">
+            </td>
+            <td>
+              <img id="img7" src="" alt="">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <strong class="title1"></strong>
+            </td>
+            <td>
+              <strong class="title2"></strong>
+            </td>
+            <td>
+              <strong class="title3"></strong>
+            </td>
+            <td>
+              <strong class="title4"></strong>
+            </td>
+            <td>
+              <strong class="title5"></strong>
+            </td>
+            <td>
+              <strong class="title6"></strong>
+            </td>
+            <td>
+              <strong class="title7"></strong>
+            </td>
+          </tr>
 
-
-      <div class="forecast">
-
-
-        </div>
+        </table>
+      </div>
     </section>
 
     <section id="weather-map">

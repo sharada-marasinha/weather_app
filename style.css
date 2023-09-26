@@ -19,6 +19,7 @@ header {
     background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url('img/earth.jpg');
     background-position: center;
     padding-bottom: 5%;
+    
 
 }
 
@@ -27,10 +28,6 @@ nav{
   padding: 2% 6%;
   justify-content: space-between;
   align-items: center;
-}
-
-nav img{
-  width: 50px;
 }
 
 .nav-links{
@@ -71,11 +68,6 @@ nav img{
     text-align: center;
   
 }
-
-.user-interface {
-    margin-top: 0%;
-}
-
 .timeLbl {
     font-size: 30px; 
   }
@@ -107,106 +99,33 @@ nav img{
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
-.tblW{
-  margin-left: 20%;
-  margin-top: 4%;
-  
-}
- .weather-details {
 
-  color: white; 
-  background-color: #222F3E;
-  border-radius: 10px;
-  margin-left: 200px;
-  box-shadow: #333;
-  width: 370px;
-  height: 280px;
-    
-} 
-.lon{
-margin-left: 21%;
-margin-top: -1%;
+/* ------------------------------------------------------------------------------------------------------------------------ */
+.tblW td{
+  text-align: center;
+  border: 1px solid #fff;
+  padding: 1%;
+  width: 11vw;
+  background-color: #333;
+  color: #fff;
 }
-.lat{
-  margin-left: 21%;
-  margin-bottom: 4px;
+
+.tblForcast td{
+  
+  border: 1px solid #fff;
+  padding: 10px;
+  width: 20vw;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
 }
-#lon{
-  margin-left: 2%;
+
+.tblForcast td img{
+  width: 70%;
 }
-#lat{
-  margin-left:2% ;
-}
-/* ******location************** */
-.locationPara{
-  font-family:'Courier New', Courier, monospace;
-  font-size: 18px;
-  font-weight: 18;
-}
-.tz_id{
-  font-size: 14px;
- 
-}
-/* ******tempurature************** */
-.tempPara{
-  font-family:'Courier New', Courier, monospace;
-  font-size: 18px;
-  font-weight: 18;
-}
-.temp_c{
-  font-size: 14px;
-  padding-left: 8px;
-}
-/* ******humidity************** */
-.humidityPara{
-  font-family:'Courier New', Courier, monospace;
-  font-size: 18px;
-  font-weight: 18;
-}
-.temp_c{
-  font-size: 14px;
-  padding-left: 8px;
-}
-/* ******wind-speed************** */
-.windPara{
-  font-family:'Courier New', Courier, monospace;
-  font-size: 18px;
-  font-weight: 18;
-}
-.temp_c{
-  font-size: 14px;
-  padding-left: 8px;
-}
-/* ******condition************** */
-.conditionPara{
-  font-family:'Courier New', Courier, monospace;
-  font-size: 18px;
-  font-weight: 18;
-}
-.temp_c{
-  font-size: 14px;
-  padding-left: 8px;
-}
-/* ******region************** */
-.regionPara{
-  font-family:'Courier New', Courier, monospace;
-  font-size: 18px;
-  font-weight: 18;
-}
-.temp_c{
-  font-size: 14px;
-  padding-left: 8px;
-}
-/* ******country************** */
-.countryPara{
-  font-family:'Courier New', Courier, monospace;
-  font-size: 18px;
-  font-weight: 18;
-}
-.temp_c{
-  font-size: 14px;
-  padding-left: 8px;
-}
+
+
+
 .date-serch{
   margin: 7px;
   align-items: center;
@@ -376,7 +295,6 @@ margin-top: -1%;
     height: 400px;
     width: 100%;
 }
-
 
 
 
