@@ -24,7 +24,7 @@ navigator.geolocation.getCurrentPosition(
   function (position) {
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
-    fetchCurrentLocationName(latitude, longitude);
+    fetchWeatherData(latitude+","+ longitude);
   },
   function (error) {
     console.error(`Geolocation error: ${error.message}`);
@@ -39,13 +39,10 @@ function darkMode() {
 //-------------------------------------------handleSearch----------------------------------------
 
 function handleSearch() {
-   
   const location = document.getElementById("location-input").value;
-
-  console.log(location);
-
   fetchWeatherData(location);
 }
+
 function fetchWeatherData(location) {
   $.ajax({
     method : "GET",
@@ -65,21 +62,6 @@ function fetchWeatherData(location) {
        img.src = data["current"]["condition"]["icon"];
     }
  });
-}
-//-------------------------------------------fetchCurrentLocationName----------------------------------
-async function fetchCurrentLocationName(latitude, longitude) {
-  
-  $.ajax({
-    method : "GET",
-    url: `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${latitude},${longitude}&aqi=no`,
-    success : (data) => {
-       const locationName = data.location.name;
-       fetchWeatherData(locationName);
-       getWeatherTimeLine();
-       console.log(`Current Location Name: ${locationName}`);
-    }
- });
-  
 }
 
 // -------------------------------------------------updateLocalTime-----------------------------
