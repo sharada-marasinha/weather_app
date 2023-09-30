@@ -78,9 +78,31 @@ updateLocalTime();
 
 setInterval(updateLocalTime, 1000);
 
+//---------------------------------------------------searchForecast-------------------------------------
+
+searchForecast();
+
+function searchForecast(){
+
+  const startDate = new Date(document.getElementById('startDate').value);
+  const endDate = new Date(document.getElementById('endDate').value);
+  //getWeatherTimeLine(startDate, endDate);
+
+  const timeDiff = endDate - startDate;
+
+  const daysDiff = timeDiff / (1000 * 3600 * 24);
+  if(daysDiff == 7){
+    getWeatherTimeLine(document.getElementById('startDate').value, document.getElementById('endDate').value);
+  }else{
+   alert("Date range exceeds 7 days!");
+  }
+}
+
 // ------------------------------------getWeatherTimeLine---------------------------------
 
-let img1=document.getElementById("img1");
+function getWeatherTimeLine(startDate, endDate) {
+
+  let img1=document.getElementById("img1");
 let img2=document.getElementById("img2");
 let img3=document.getElementById("img3");
 let img4=document.getElementById("img4");
@@ -104,9 +126,6 @@ let date04 = document.querySelector("#date4");
 let date05 = document.querySelector("#date5");
 let date06 = document.querySelector("#date6");
 let date07 = document.querySelector("#date7");
-
-function getWeatherTimeLine(startDate, endDate) {
-
   
   $.ajax({
     method : "GET",
@@ -138,22 +157,4 @@ function getWeatherTimeLine(startDate, endDate) {
     }
  });
 
-}
-
-function searchForecast(){
-
-  const startDate = new Date(document.getElementById('startDate').value);
-  const endDate = new Date(document.getElementById('endDate').value);
-  //getWeatherTimeLine(startDate, endDate);
-
-  const timeDiff = endDate - startDate;
-
-  const daysDiff = timeDiff / (1000 * 3600 * 24);
-  if(daysDiff == 7){
-    getWeatherTimeLine(document.getElementById('startDate').value, document.getElementById('endDate').value);
-  }else{
-    alert("Date range exceeds 7 days!");
-  }
-
-  alert(daysDiff);
 }
