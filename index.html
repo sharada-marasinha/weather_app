@@ -23,10 +23,10 @@
             <i class="fa fa-times" onclick="hideMenu()"></i>
             <ul>
                 <li><a href="">HOME</a></li>
-                <li><a href="#course">CURRNENT</a></li>
-                <li><a href="#facilities">FORECAST</a></li>
-                <li><a href="#onlineCourse">NEWS</a></li>
-                <li><a href="">MAP</a></li>
+                <li><a href="#current-weather">CURRNENT</a></li>
+                <li><a href="#weather-forecast">FORECAST</a></li>
+                <li><a href="#news">NEWS</a></li>
+                <li><a href="#weather-map">MAP</a></li>
                 <li><a href="#footer">SUBSCRIBE</a></li>
             </ul>
         </div>
@@ -37,7 +37,7 @@
       <div class="user-interface">
         <input type="text" id="location-input" placeholder="Enter location" />
         <button id="search-button">Search</button>
-        <button onclick="darkMode()">DarkMood</button>
+        <!-- <button onclick="darkMode()">DarkMood</button> -->
         
       </div>
       
@@ -46,7 +46,7 @@
     
     <!-----------------------------------Current Weather------------------------->
     <section id="current-weather">
-      <h1>Current Weather 🌱</h1>
+      <h1 class="heders">Current Weather 🌱</h1>
             <div class="weather-card">
               <div class="weather-icon">
                 <img class="weatherIcon1" id="weatherIcon" alt="Weather Icon" src="img/icons8-cloud-lightning-96.png"/>
@@ -98,7 +98,7 @@
     <!-----------------------------------Current Weather END------------------------->
 
     <section id="weather-forecast">
-      <h1>Weather Forecast</h1>
+      <h1 class="heders">Weather Forecast</h1>
 
       <div class="date-serch">
         To   : <input id="startDate" type="date">&nbsp;&nbsp;&nbsp;
@@ -183,7 +183,7 @@
     </section>
 
     <section id="weather-map">
-      <h1>Weather Map</h1>
+      <h1 class="heders">Weather Map</h1>
       <div id="map-container">
 
         <iframe  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31705.787833852708!2d79.95392!3d6.619136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2slk!4v1695663330626!5m2!1sen!2slk" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -191,7 +191,7 @@
     </section>
 <!--------------------------------------niws------------------------------------------------->
     <section id="news">
-      <h1>Top stories</h1>
+      <h1 class="heders">Top stories</h1>
       <div class="forecast">
         <div class="grid-cols-1 sm:grid md:grid-cols-3">
           <div
@@ -281,7 +281,7 @@
       </div>
     </section>
 
-    <footer>
+    <footer id="footer">
       <div
         class="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32"
       >

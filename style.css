@@ -90,31 +90,71 @@ nav{
     border-radius: 10px;
     cursor: pointer;
 }
-/*----------------Header CSS END ---------------------*/
 
 
-
-#current-weather td {
-  border: 3px solid #fff;
-  width: 20vw;
+.heders{
+  font-size: 30px;
+  font-weight: bold;
   background-color: #333;
   color: #fff;
-  text-align: center;
-  size: 20%;
-}
-
-#current-weather{
-
-  background-color: #fff;
-  margin: 20px;
-  padding: 20px;
+  padding: 10px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
 
+/*----------------Header CSS END ---------------------*/
 
-/* ------------------------------------------------------------------------------------------------------------------------ */
+/* --------------------------------Current Weather card-------------------------------------- */
+#current-weather{
+  background-color: #fff;
+   margin: 20px;
+   padding: 20px;
+   border-radius: 5px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+ }
+.weather-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1%;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.weather-card:hover {
+  transform: scale(1.02);
+}
+
+.weather-info {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.location {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.temperature {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.description {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.weather-icon img {
+  width: 120px;
+  height: 120px;
+  padding: 5px;
+}
+
 .tblW{
   width: 100%;
 }
@@ -122,18 +162,19 @@ nav{
 .tblW td{
   text-align: center;
   border: 2px solid #fff;
-  padding: 1px;
-  width: 20vw;
+  padding: 10px;
   background-color: #333;
   color: #fff;
-  max-width: 100%;
+}
+
+/* -----------------------------------------------------------------Weather Forecast------------------------------------------------------- */
+.tblForcast{
+  width: 100%;
 }
 
 .tblForcast td{
-  
-  border: 3px solid #fff;
-  padding: 1.5%;
-  width: 20vw;
+  border: 2px solid #fff;
+  padding: 10px;
   background-color: #333;
   color: #fff;
   text-align: center;
@@ -143,8 +184,6 @@ nav{
   width: 70%;
 }
 
-
-
 .date-serch{
   margin: 7px;
   text-align: center;
@@ -152,45 +191,8 @@ nav{
 }
 
 
-#current-weather h1 {
-    font-size: 30px;
-    font-weight: bold;
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-}
 
-#weather-map h1 {
-  font-size: 30px;
-  font-weight: bold;
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-}
 
-#weather-forecast h1{
-  font-size: 200%;
-  font-weight: bold;
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-}
-
-#news h1{
-  font-size: 30px;
-  font-weight: bold;
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
-}
 .dark-mode {
   background-color: #A4B0BE;
   color: white;
@@ -207,55 +209,12 @@ nav{
 }
 
 .forecast {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-
-.weather-card {
-    background-color: #ffffff;
-    border-radius: 10px;
+    background-color: #fff;
+    margin: 20px;
     padding: 20px;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .weather-card:hover {
-    transform: scale(1.02);
-  }
-  
-  .weather-info {
-    flex: 1;
-    margin-right: 20px;
-  }
-  
-  .location {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin: 0;
-  }
-  
-  .temperature {
-    font-size: 4rem;
-    font-weight: bold;
-    margin: 10px 0;
-  }
-  
-  .description {
-    font-size: 1.4rem;
-    margin: 0;
-  }
-  
-  .weather-icon img {
-    width: 120px;
-    height: 120px;
-    padding: 5px;
-  }
-
-
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
 #weather-map {
     background-color: #fff;
