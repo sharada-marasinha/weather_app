@@ -12,71 +12,28 @@ let wind_kph = $(".wind_kph");
 let img = document.getElementById("weatherIcon");
 const apiKey = "4a758dd1aed04dc3950175920231609";
 
-
-//--------------------------------------getCurrentPosition-----------------------------------
-let latitude;
-let longitude;
-navigator.geolocation.getCurrentPosition(
-  function (position) {
-    latitude = position.coords.latitude;
-    longitude = position.coords.longitude;
-    //fetchWeatherData(latitude + "," + longitude);
-  },
-  function (error) {
-    console.error(`Geolocation error: ${error.message}`);
-  }
-);
+getLocation();
 
 function darkMode() {
   var element = document.body;
   element.classList.toggle("dark-mode");
 }
-loc();
-function loc() {
-  const successs = (position1) => {
-    const latitude = position1.coords.latitude;
-    const longitude = position1.coords.longitude;
-    const accuracy = position1.coords.accuracy;
-
-
-    // var map = L.map('map').setView([latitude, longitude], 13);
-
-    // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    //   maxZoom: 19,
-    //   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    // }).addTo(map);
-
-   // marker = L.marker([latitude, longitude]).addTo(map);
-    // const circle = L.circle([latitude, longitude], { radius: accuracy }).addTo(map);
-
-   
-    // map.fitBounds(circle.getBounds());
-   // marker.setLatLng([latitude, longitude]).update();
-   // map.setView([latitude, longitude]);
-
-
-
-
-    const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
-
-
-    
-    $.ajax({
-      method: "GET",
-      url: geoApiUrl,
-      success: (resp) => {
-    //    loactionName.text(resp.locality)
-      }
-    })
-    fetchWeatherData(latitude + "," + longitude);
+//--------------------------------------getCurrentPosition-----------------------------------
+let latitude;
+let longitude;
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
   }
-
-
-  const error = () => {
-    console.log("yusdhsjd");
-  }
-  navigator.geolocation.getCurrentPosition(successs, error);
 }
+function showPosition(position) {
+  latitude = position.coords.latitude;
+  longitude = position.coords.longitude;
+  fetchWeatherData(latitude + "," + longitude);
+}
+
 
 
 //-------------------------------------------handleSearch----------------------------------------
