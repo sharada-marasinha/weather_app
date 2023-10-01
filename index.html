@@ -52,14 +52,14 @@
                 <img class="weatherIcon1" id="weatherIcon" alt="Weather Icon" src="img/icons8-cloud-lightning-96.png"/>
               </div>
               <div class="weather-info">
-                <h3 class="location name">Panadura</h3>
+                <h3 class="location name" id="location">Panadura</h3>
                 <p class="temperature temp_c">25°C</p>
                 <p class="description url">Cloudy</p>
               </div>
               <div class="timeLbl" id="local-time"></div>    
             </div>
        
-            <div class="weather-details">
+            <div class="weather-details" id="">
               <table class="tblW">
                 <tr>
                   <td><strong class="locationPara">📍Location</strong></td>
@@ -72,7 +72,7 @@
                   
                   <td><strong class="conditionPara">💧Condition</strong></td>
                   
-                  <td><strong class="regionPara">🎗 Region</strong></td>
+                  <td><strong class="regionPara">🎗Region</strong></td>
                   
                   <td><strong class="countryPara">🗺 Country</strong></td>
                   
@@ -87,7 +87,7 @@
                   <td><span class="humidity">33</span></td>
                   <td><span class="wind_kph">75.22</span></td>
                   <td class="url">Cloudy</td>
-                  <td><span class="region"></span>Wston</td>
+                  <td><span class="region">Western</span></td>
                   <td><span class="country">Sri-Lanka</span></td>
                   <td><span id="lon">11.33</span></td>
                   <td><span id="lat">20.55</span></td>
@@ -134,25 +134,25 @@
           </tr>
           <tr>
             <td>
-              <img id="img1" src="img/icons8-cloud-96.png" alt="">
+              <img id="img1" class="img" src="img/icons8-cloud-96.png" alt="">
             </td>
             <td>
-              <img id="img2" src="img/icons8-cloud-lightning-96.png" alt="">
+              <img id="img2" class="img" src="img/icons8-cloud-lightning-96.png" alt="">
             </td>
             <td>
-              <img id="img3" src="img/icons8-partly-cloudy-day-96.png" alt="">
+              <img id="img3" class="img" src="img/icons8-partly-cloudy-day-96.png" alt="">
             </td>
             <td>
-              <img id="img4" src="img/icons8-night-wind-96.png" alt="">
+              <img id="img4" class="img" src="img/icons8-night-wind-96.png" alt="">
             </td>
             <td>
-              <img id="img5" src="img/icons8-storm-94.png" alt="">
+              <img id="img5" class="img" src="img/icons8-storm-94.png" alt="">
             </td>
             <td>
-              <img id="img6" src="img/icons8-cloud-lightning-96.png" alt="">
+              <img id="img6" class="img" src="img/icons8-cloud-lightning-96.png" alt="">
             </td>
             <td>
-              <img id="img7" src="img/icons8-night-wind-96.png" alt="">
+              <img id="img7" class="img" src="img/icons8-night-wind-96.png" alt="">
             </td>
           </tr>
           <tr>
@@ -187,12 +187,12 @@
       <h1>Weather Map</h1>
       <div id="map-container">
 
-        <iframe  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31705.787833852708!2d79.95392!3d6.619136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2slk!4v1695663330626!5m2!1sen!2slk" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31705.787833852708!2d79.95392!3d6.619136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2slk!4v1695663330626!5m2!1sen!2slk" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </section>
 <!--------------------------------------niws------------------------------------------------->
     <section id="news">
-      <h1>News</h1>
+      <h1>Top stories</h1>
       <div class="forecast">
         <div class="grid-cols-1 sm:grid md:grid-cols-3">
           <div
@@ -245,7 +245,7 @@
               </p>
             </div>
             <div
-              class="mt-auto border-t-2 border-neutral-100 px-6 py-3 text-center"
+              class="mt-auto border-t-2 border-neutral-100 px-6 py-3 text-center dark:border-neutral-600"
             >
               <small>Last updated 3 mins ago</small>
             </div>
@@ -266,7 +266,7 @@
               >
                 Card title
               </h5>
-              <p class="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+              <p class="mb-4 text-base text-neutral-600">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This card has even longer content
                 than the first to show that equal height action.

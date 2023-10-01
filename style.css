@@ -63,13 +63,14 @@ nav{
 
 
 .title{
-    font-size: 50px;
+    font-size: 300%;
     margin-top: 1%;
     text-align: center;
   
 }
 .timeLbl {
-    font-size: 30px; 
+    font-size: 300%; 
+    font-weight: bold;
   }
 
 #location-input {
@@ -103,24 +104,24 @@ nav{
 /* ------------------------------------------------------------------------------------------------------------------------ */
 .tblW td{
   text-align: center;
-  border: 1px solid #fff;
-  padding: 1%;
-  width: 11vw;
+  border: 2px solid #fff;
+  padding: 1px;
+  width: 13%;
   background-color: #333;
   color: #fff;
 }
 
 .tblForcast td{
   
-  border: 1px solid #fff;
-  padding: 10px;
+  border: 3px solid #fff;
+  padding: 1.5%;
   width: 20vw;
   background-color: #333;
   color: #fff;
   text-align: center;
 }
 
-.tblForcast td img{
+.img{
   width: 70%;
 }
 
@@ -128,8 +129,8 @@ nav{
 
 .date-serch{
   margin: 7px;
-  align-items: center;
-  
+  text-align: center;
+  margin: 20px;
 }
 
 
@@ -154,7 +155,7 @@ nav{
 }
 
 #weather-forecast h1{
-  font-size: 30px;
+  font-size: 200%;
   font-weight: bold;
   background-color: #333;
   color: #fff;
@@ -179,37 +180,6 @@ nav{
     color: #222F3E;
   }
 }
-#weather-details{
-    display: inline-flex;
-    justify-content: space-between;
-    background-color: #f5f5f5; 
-    border-radius: 5px; 
-    margin-top: 10px;
-    padding: 10px;
-    width: 190%;
- 
-  }
-  #weather-details p {
-    margin: 5px 0;
-    font-size: 16px;
-  }
-  
-  #weather-details span {
-    font-weight: bold;
-    color: #333; 
-  }
-  
-  #weather-details:hover {
-    background-color: #ddd; 
-  } 
-
-  #weather-details img {
-    max-width: 100px;
-    height: auto;
-    
-    
-}
-  
 #weather-forecast {
     background-color: #fff;
     margin: 20px;
@@ -236,7 +206,7 @@ nav{
   }
   
   .weather-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
   
   .weather-info {
@@ -264,6 +234,7 @@ nav{
   .weather-icon img {
     width: 120px;
     height: 120px;
+    padding: 5px;
   }
 
 
@@ -276,14 +247,9 @@ nav{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-#weather-map h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
 
 
 @media screen and (max-width: 768px) {
-    /* Mobile styles go here */
     header h1 {
         font-size: 24px;
     }
@@ -301,10 +267,6 @@ nav{
     }
 }
 
-#map {
-    height: 400px;
-    width: 100%;
-}
 
 
 

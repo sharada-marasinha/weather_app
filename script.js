@@ -43,7 +43,7 @@ function handleSearch() {
   fetchWeatherData(location);
 }
 document.getElementById("search-button").addEventListener("click", handleSearch);
-
+let locationName;
 function fetchWeatherData(location) {
   $.ajax({
     method: "GET",
@@ -55,6 +55,8 @@ function fetchWeatherData(location) {
       latP.text(location.lat);
       lonP.text(location.lon);
       nameP.text(location.name);
+      locationName = location.name;
+      
       regionP.text(location.region);
       urlP.text(current.condition.text);
       humidity.text(current.humidity);
@@ -73,7 +75,7 @@ function updateLocalTime() {
   const now = new Date();
   const localTimeString = now.toLocaleTimeString();
 
-  localTimeElement.textContent = `Time: ${localTimeString}`;
+  localTimeElement.textContent = `${localTimeString}`;
 }
 
 updateLocalTime();
@@ -91,7 +93,10 @@ function searchForecast() {
   const timeDiff = endDate - startDate;
 
   const daysDiff = timeDiff / (1000 * 3600 * 24);
-  
+
+  console.log(daysDiff);
+
+  getWeatherTimeLine(document.getElementById('startDate').value, document.getElementById('endDate').value)
 
 }
 
@@ -99,13 +104,14 @@ function searchForecast() {
 
 function getWeatherTimeLine(startDate, endDate) {
 
+  console.log(startDate,endDate);
+
   const imgIds = ["img1", "img2", "img3", "img4", "img5", "img6", "img7"];
   const titleClasses = [".title1", ".title2", ".title3", ".title4", ".title5", ".title6", ".title7"];
   const dateIds = ["date1", "date2", "date3", "date4", "date5", "date6", "date7"];
-
   $.ajax({
     method: "GET",
-    url: `http://api.weatherapi.com/v1/history.json?key=4a758dd1aed04dc3950175920231609&q=Panadura&dt=${startDate}&end_dt=${endDate}`,
+    url: `http://api.weatherapi.com/v1/history.json?key=4a758dd1aed04dc3950175920231609&q=${"Panadura"}&dt=${startDate}&end_dt=${endDate}`,
     success: (resp) => {
       for (let i = 0; i < 7; i++) {
         const forecastDay = resp['forecast']['forecastday'][i]['day'];
