@@ -100,31 +100,10 @@ function searchForecast() {
 // ------------------------------------getWeatherTimeLine---------------------------------
 
 function getWeatherTimeLine(startDate, endDate) {
-
-  let img1 = document.getElementById("img1");
-  let img2 = document.getElementById("img2");
-  let img3 = document.getElementById("img3");
-  let img4 = document.getElementById("img4");
-  let img5 = document.getElementById("img5");
-  let img6 = document.getElementById("img6");
-  let img7 = document.getElementById("img7");
-
-  let title1 = document.querySelector(".title1");
-  let title2 = document.querySelector(".title2");
-  let title3 = document.querySelector(".title3");
-  let title4 = document.querySelector(".title4");
-  let title5 = document.querySelector(".title5");
-  let title6 = document.querySelector(".title6");
-  let title7 = document.querySelector(".title7");
-
-
-  let date01 = document.querySelector("#date1");
-  let date02 = document.querySelector("#date2");
-  let date03 = document.querySelector("#date3");
-  let date04 = document.querySelector("#date4");
-  let date05 = document.querySelector("#date5");
-  let date06 = document.querySelector("#date6");
-  let date07 = document.querySelector("#date7");
+  
+  const imgIds = ["img1", "img2", "img3", "img4", "img5", "img6", "img7"];
+  const titleClasses = [".title1", ".title2", ".title3", ".title4", ".title5", ".title6", ".title7"];
+  const dateIds = ["date1", "date2", "date3", "date4", "date5", "date6", "date7"];
 
   $.ajax({
     method: "GET",
@@ -133,16 +112,15 @@ function getWeatherTimeLine(startDate, endDate) {
       for (let i = 0; i < 7; i++) {
         const forecastDay = resp['forecast']['forecastday'][i]['day'];
 
-        const img = document.getElementById(`img${i + 1}`);
-        const title = document.getElementById(`title${i + 1}`);
-        const date = document.getElementById(`date${i + 1}`);
+        const img = document.getElementById(imgIds[i]);
+        const title = document.querySelector(titleClasses[i]);
+        const date = document.getElementById(dateIds[i]);
 
         img.src = forecastDay['condition']['icon'];
         title.innerHTML = forecastDay['condition']['text'];
         date.innerHTML = resp['forecast']['forecastday'][i]['date'];
       }
-
     }
   });
-
 }
+
