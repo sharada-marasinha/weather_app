@@ -20,7 +20,7 @@ navigator.geolocation.getCurrentPosition(
   function (position) {
     latitude = position.coords.latitude;
     longitude = position.coords.longitude;
-    fetchWeatherData(latitude + "," + longitude);
+    //fetchWeatherData(latitude + "," + longitude);
   },
   function (error) {
     console.error(`Geolocation error: ${error.message}`);
@@ -31,6 +31,53 @@ function darkMode() {
   var element = document.body;
   element.classList.toggle("dark-mode");
 }
+loc();
+function loc() {
+  const successs = (position1) => {
+    const latitude = position1.coords.latitude;
+    const longitude = position1.coords.longitude;
+    const accuracy = position1.coords.accuracy;
+
+
+    // var map = L.map('map').setView([latitude, longitude], 13);
+
+    // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    //   maxZoom: 19,
+    //   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    // }).addTo(map);
+
+   // marker = L.marker([latitude, longitude]).addTo(map);
+    // const circle = L.circle([latitude, longitude], { radius: accuracy }).addTo(map);
+
+   
+    // map.fitBounds(circle.getBounds());
+   // marker.setLatLng([latitude, longitude]).update();
+   // map.setView([latitude, longitude]);
+
+
+
+
+    const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
+
+
+    
+    $.ajax({
+      method: "GET",
+      url: geoApiUrl,
+      success: (resp) => {
+    //    loactionName.text(resp.locality)
+      }
+    })
+    fetchWeatherData(latitude + "," + longitude);
+  }
+
+
+  const error = () => {
+    console.log("yusdhsjd");
+  }
+  navigator.geolocation.getCurrentPosition(successs, error);
+}
+
 
 //-------------------------------------------handleSearch----------------------------------------
 
@@ -43,23 +90,24 @@ document.getElementById("search-button").addEventListener("click", handleSearch)
 function fetchWeatherData(location) {
   $.ajax({
     method: "GET",
-    url: `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location} &aqi=no`,
-    success: (data) => {
-      console.log(data);
-      countryP.text(data["location"]["country"]);
-      idP.text(data["current"]["temp_c"] + "°C");
-      latP.text(data["location"]["lat"]);
-      lonP.text(data["location"]["lon"]);
-      nameP.text(data["location"]["name"]);
-      regionP.text(data["location"]["region"]);
-      urlP.text(data["current"]["condition"]["text"]);
-      humidity.text(data["current"]["humidity"]);
-      tz_id.text(data["location"]["tz_id"]);
-      wind_kph.text(data["current"]["wind_kph"] + "kph");
-      img.src = data["current"]["condition"]["icon"];
+    url: `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}&aqi=no`,
+    success: ({ location, current }) => {
+     // console.log(data);
+      countryP.text(location.country);
+      idP.text(current.temp_c + "°C");
+      latP.text(location.lat);
+      lonP.text(location.lon);
+      nameP.text(location.name);
+      regionP.text(location.region);
+      urlP.text(current.condition.text);
+      humidity.text(current.humidity);
+      tz_id.text(location.tz_id);
+      wind_kph.text(current.wind_kph + "kph");
+      img.src = current.condition.icon;
     }
   });
 }
+
 
 // -------------------------------------------------updateLocalTime-----------------------------
 
@@ -83,24 +131,17 @@ function searchForecast() {
 
   const startDate = new Date(document.getElementById('startDate').value);
   const endDate = new Date(document.getElementById('endDate').value);
-  //getWeatherTimeLine(startDate, endDate);
-
   const timeDiff = endDate - startDate;
 
   const daysDiff = timeDiff / (1000 * 3600 * 24);
-  // getWeatherTimeLine(document.getElementById('startDate').value, document.getElementById('endDate').value);
-  etWeatherTimeLine("2023-09-29", "2023-09-24");
-  // if(daysDiff == 7){
-  //   getWeatherTimeLine(document.getElementById('startDate').value, document.getElementById('endDate').value);
-  // }else{
-  //  alert("Date range exceeds 7 days!");
-  // }
+  
+
 }
 
 // ------------------------------------getWeatherTimeLine---------------------------------
 
 function getWeatherTimeLine(startDate, endDate) {
-  
+
   const imgIds = ["img1", "img2", "img3", "img4", "img5", "img6", "img7"];
   const titleClasses = [".title1", ".title2", ".title3", ".title4", ".title5", ".title6", ".title7"];
   const dateIds = ["date1", "date2", "date3", "date4", "date5", "date6", "date7"];
