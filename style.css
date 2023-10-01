@@ -104,6 +104,7 @@ nav{
 }
 
 #current-weather{
+
   background-color: #fff;
   margin: 20px;
   padding: 20px;
@@ -114,6 +115,10 @@ nav{
 
 
 /* ------------------------------------------------------------------------------------------------------------------------ */
+.tblW{
+  width: 100%;
+}
+
 .tblW td{
   text-align: center;
   border: 2px solid #fff;

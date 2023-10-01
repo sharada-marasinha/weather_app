@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Weather World</title>
 
     <link rel="stylesheet" href="style.css" />
@@ -58,8 +58,7 @@
               </div>
               <div class="timeLbl" id="local-time"></div>    
             </div>
-       
-            <div class="weather-details">
+            <div style="overflow-x:auto;">
               <table class="tblW">
                 <tr>
                   <td><strong class="locationPara">📍Location</strong></td>
@@ -107,7 +106,7 @@
         <button onclick="searchForecast()">Search Date</button>
       </div>
       <hr>
-      <div>
+      <div style="overflow-x:auto;">
         <table class="tblForcast">
           <tr>
             <td>
