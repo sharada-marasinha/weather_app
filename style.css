@@ -162,6 +162,16 @@ nav{
   border-radius: 5px;
   text-align: center;
 }
+
+#news h1{
+  font-size: 30px;
+  font-weight: bold;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
 .dark-mode {
   background-color: #A4B0BE;
   color: white;
