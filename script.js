@@ -159,3 +159,62 @@ function getWeatherTimeLine(startDate, endDate) {
   });
 }
 
+
+
+// 8c3c23f0ce854f9b9e4a8e73ddca6c06
+
+
+// https://newsapi.org/v2/everything?q=Apple&from=2023-10-02&sortBy=popularity&apiKey=API_KEY
+
+news();
+
+
+function news(){
+  let imgN1 = document.getElementById('imgN1');
+  let imgN2 = document.getElementById('imgN2');
+  let imgN3 = document.getElementById('imgN3');
+  
+  let title1 = document.getElementById('title1');
+  let title2 = document.getElementById('title2');
+  let title3 = document.getElementById('title3');
+  
+  let a1 = document.getElementById('a1');
+  let a2 = document.getElementById('a2');
+  let a3 = document.getElementById('a3');
+  
+  let p1 = document.getElementById('p1');
+  let p2 = document.getElementById('p2');
+  let p3 = document.getElementById('p3');
+  
+  let ptime1=document.getElementById('ptime1');
+  let ptime2=document.getElementById('ptime2');
+  let ptime3=document.getElementById('ptime3');
+  
+  $.ajax({
+    method : "GET",
+    url : `https://newsapi.org/v2/everything?q=Apple&from=2023-10-01&sortBy=popularity&apiKey=8c3c23f0ce854f9b9e4a8e73ddca6c06`,
+    success : (data) =>{
+      console.log(data);
+      imgN1.src=data['articles'][0]['urlToImage'];
+      imgN2.src=data['articles'][1]['urlToImage'];
+      imgN3.src=data['articles'][2]['urlToImage'];
+  
+      title1.innerHTML=data['articles'][0]['title'];
+      title2.innerHTML=data['articles'][1]['title'];
+      title3.innerHTML=data['articles'][2]['title'];
+  
+      a1.href = data['articles'][0]['url'];
+      a2.href = data['articles'][1]['url'];
+      a3.href = data['articles'][2]['url'];
+  
+      p1.innerHTML = data['articles'][0]['description'];
+      p2.innerHTML = data['articles'][1]['description'];
+      p3.innerHTML = data['articles'][2]['description'];
+  
+      ptime1.innerHTML=data['articles'][0]['publishedAt'];
+      ptime2.innerHTML=data['articles'][1]['publishedAt'];
+      ptime3.innerHTML=data['articles'][2]['publishedAt'];
+    }
+  
+  });
+}
