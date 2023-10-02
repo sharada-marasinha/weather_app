@@ -17,7 +17,7 @@ var map = L.map('map').setView([0, 0], 13);
 var marker;
 
 getLocation();
-news();
+
 
 function darkMode() {
   var element = document.body;
@@ -162,16 +162,9 @@ function getWeatherTimeLine(startDate, endDate) {
 
 
 
-// 8c3c23f0ce854f9b9e4a8e73ddca6c06
-
-
-// https://newsapi.org/v2/everything?q=Apple&from=2023-10-02&sortBy=popularity&apiKey=API_KEY
-
-
-
+news();
 
 function news(){
-  alert("News.....");
   let imgN1 = document.getElementById('imgN1');
   let imgN2 = document.getElementById('imgN2');
   let imgN3 = document.getElementById('imgN3');
