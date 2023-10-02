@@ -266,6 +266,67 @@ nav{
       margin: 0;
     }
 
+    .heders{
+      font-size: 20px;
+      font-weight: bold;
+      background-color: #333;
+      color: #fff;
+      padding: 8px;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    #location-input {
+      padding: 5px;
+      width: 50%;
+      border: none;
+      border-radius: 10px;
+      color: black;   
+  }
+  
+  #search-button {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 5px;
+      margin: 5px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+  }
+
+  .title{
+    font-size: 200%;
+    margin: 40px;
+    text-align: center;
+  
+}
+
+
+nav{
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links{
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links ul li{
+  list-style: none;
+  display: inline-block;
+  padding: 5px 2px;
+  position: relative;
+}
+.nav-links ul li a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 8px;
+
+}
+
 }
 
 @media screen and (max-width: 530px) {
