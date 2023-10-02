@@ -194,13 +194,7 @@ nav{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.forecast {
-    background-color: #fff;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
+
 
 #weather-map {
     background-color: #fff;
@@ -216,7 +210,13 @@ nav{
   border: 1px solid rgb(255, 255, 255);
 }
 
-
+#news{
+  background-color: #fff;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
 @media screen and (max-width: 768px) {
     header h1 {
@@ -330,9 +330,40 @@ nav{
   color: #fff;
   text-align: center;
 }
+#current-weather{
+  background-color: #fff;
+   margin: 5px;
+   padding: 5px;
+   border-radius: 5px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+ }
 
+ #weather-forecast {
+  background-color: #fff;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#weather-map {
+  background-color: #fff;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+#news{
+  background-color: #fff;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
 }
+
+
 
 @media screen and (max-width: 530px) {
   header h1 {
