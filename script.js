@@ -143,7 +143,7 @@ function getWeatherTimeLine(startDate, endDate) {
   const dateIds = ["date1", "date2", "date3", "date4", "date5", "date6", "date7"];
   $.ajax({
     method: "GET",
-    url: `http://api.weatherapi.com/v1/history.json?key=${apiKey}&q=${"Panadura"}&dt=${startDate}&end_dt=${endDate}`,
+    url: `https://api.weatherapi.com/v1/history.json?key=${apiKey}&q=${"Panadura"}&dt=${startDate}&end_dt=${endDate}`,
     success: (resp) => {
       for (let i = 0; i < 7; i++) {
         const forecastDay = resp['forecast']['forecastday'][i]['day'];
