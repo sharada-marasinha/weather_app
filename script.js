@@ -164,6 +164,10 @@ function getWeatherTimeLine(startDate, endDate) {
 
 news();
 
+// You should only use the Developer plan if your project is in development.
+
+// If your project is being used in production, please upgrade to a paid plan.
+
 function news(){
   let imgN1 = document.getElementById('imgN1');
   let imgN2 = document.getElementById('imgN2');
