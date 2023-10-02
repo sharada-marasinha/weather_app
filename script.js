@@ -12,6 +12,10 @@ let wind_kph = $(".wind_kph");
 let img = document.getElementById("weatherIcon");
 const apiKey = "4a758dd1aed04dc3950175920231609";
 
+var map = L.map('map').setView([0, 0], 13);
+
+var marker;
+
 getLocation();
 
 function darkMode() {
@@ -25,14 +29,41 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
   } else {
-    x.innerHTML = "Geolocation is not supported by this browser.";
+    alert("Geolocation is not supported by this browser.");
   }
 }
 function showPosition(position) {
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
   fetchWeatherData(latitude + "," + longitude);
+
+
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+  }).addTo(map);
+
+  marker = L.marker([latitude, longitude]).addTo(map);
+  marker.setLatLng([latitude, longitude]).update();
+  map.setView([latitude, longitude]);
+
+  const geoApiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`;
+
+
+    
+  $.ajax({
+    method: "GET",
+    url: geoApiUrl,
+    success: (resp) => {
+      console.log('====================================');
+      console.log(resp);
+      console.log('====================================');
+    }
+  })
+  
 }
+
+
 
 
 
@@ -43,19 +74,18 @@ function handleSearch() {
   fetchWeatherData(location);
 }
 document.getElementById("search-button").addEventListener("click", handleSearch);
-let locationName;
+
 function fetchWeatherData(location) {
   $.ajax({
     method: "GET",
     url: `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`,
     success: ({ location, current }) => {
-     // console.log(data);
       countryP.text(location.country);
       idP.text(current.temp_c + "°C");
       latP.text(location.lat);
       lonP.text(location.lon);
       nameP.text(location.name);
-      locationName = location.name;
+     let locationName = location.name;
       
       regionP.text(location.region);
       urlP.text(current.condition.text);
@@ -63,6 +93,9 @@ function fetchWeatherData(location) {
       tz_id.text(location.tz_id);
       wind_kph.text(current.wind_kph + "kph");
       img.src = current.condition.icon;
+
+      marker.setLatLng([location.lat, location.lon]).update();
+      map.setView([location.lat, location.lon]);
     }
   });
 }
@@ -93,8 +126,6 @@ function searchForecast() {
   const timeDiff = endDate - startDate;
 
   const daysDiff = timeDiff / (1000 * 3600 * 24);
-
-  console.log(daysDiff);
 
   getWeatherTimeLine(document.getElementById('startDate').value, document.getElementById('endDate').value)
 
