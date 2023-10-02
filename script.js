@@ -47,7 +47,7 @@ let locationName;
 function fetchWeatherData(location) {
   $.ajax({
     method: "GET",
-    url: `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}&aqi=no`,
+    url: `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`,
     success: ({ location, current }) => {
      // console.log(data);
       countryP.text(location.country);
