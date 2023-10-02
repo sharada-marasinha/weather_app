@@ -327,6 +327,27 @@ nav{
 
 }
 
+.tblW td{
+  font-size: 8px;
+  text-align: center;
+  border: 2px solid #fff;
+  padding: 5px;
+  background-color: #333;
+  color: #fff;
+}
+
+
+
+.tblForcast td{
+  font-size: 8px;
+  border: 2px solid #fff;
+  padding: 5px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+
 }
 
 @media screen and (max-width: 530px) {
@@ -367,6 +388,8 @@ nav{
     font-weight: bold;
     margin: 0;
   }
+
+
   
 
 }
