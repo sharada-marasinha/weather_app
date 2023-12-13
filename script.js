@@ -82,7 +82,7 @@ function fetchWeatherData(location) {
     url: `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`,
     success: ({ location, current }) => {
       countryP.text(location.country);
-      idP.text(current.temp_c + "°C");
+      idP.text(current.temp_c.toLocaleString(undefined,{style:"unit",unit:"celsius"}));
       latP.text(location.lat);
       lonP.text(location.lon);
       nameP.text(location.name);
