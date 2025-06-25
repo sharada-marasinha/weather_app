@@ -10,7 +10,9 @@ let humidity = $(".humidity");
 let tz_id = $(".tz_id");
 let wind_kph = $(".wind_kph");
 let img = document.getElementById("weatherIcon");
-const apiKey = {{ secrets.WEATHER_APP_API_KEY }}
+// index.js
+const apiKey = process.env.WEATHER_APP_API_KEY;
+
 
 
 var map = L.map('map').setView([0, 0], 13);
