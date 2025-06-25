@@ -14,7 +14,7 @@ let img = document.getElementById("weatherIcon");
 const apiKey = process.env.WEATHER_APP_API_KEY;
 
 
-console.log(process.env.WEATHER_APP_API_KEY);
+console.log({{WEATHER_APP_API_KEY}});
 
 
 var map = L.map('map').setView([0, 0], 13);
