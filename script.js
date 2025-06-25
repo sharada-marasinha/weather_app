@@ -11,10 +11,10 @@ let tz_id = $(".tz_id");
 let wind_kph = $(".wind_kph");
 let img = document.getElementById("weatherIcon");
 // index.js
-const apiKey = "__WEATHER_APP_API_KEY__";
+const apiKey = "__API_KEY__";
 
 
-console.log("__WEATHER_APP_API_KEY__");
+console.log("__API_KEY__",apiKey);
 
 
 var map = L.map('map').setView([0, 0], 13);
