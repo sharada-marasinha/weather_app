@@ -1,4 +1,4 @@
-name: Deploy Static Site with Secret in script.js
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -8,13 +8,13 @@ permissions:
   contents: write
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Replace placeholder with GitHub secret
+      - name: Replace placeholder in script.js
         run: |
           sed -i "s/__API_KEY__/${{ secrets.WEATHER_APP_API_KEY }}/g" script.js
 
