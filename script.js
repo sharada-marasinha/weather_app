@@ -11,7 +11,7 @@ let tz_id = $(".tz_id");
 let wind_kph = $(".wind_kph");
 let img = document.getElementById("weatherIcon");
 // index.js
-const apiKey = secrets.WEATHER_APP_API_KEY;
+const apiKey = "__WEATHER_APP_API_KEY__";
 
 
 console.log(secrets.WEATHER_APP_API_KEY);
