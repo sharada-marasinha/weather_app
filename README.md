@@ -159,10 +159,3 @@ Enjoy exploring the weather with this modern, feature-rich application! 🌤️
 
 This project uses a weather API to fetch real-time weather data. To use the API, you need to obtain an API key by signing up on the API provider's website.
 
-Once you have the API key, create a file named `config.js` in the root directory and add the following code:
-
-```javascript
-// config.js
-const apiKey = '4a758dd1aed04dc3950175920231609';
-
-export default apiKey;
